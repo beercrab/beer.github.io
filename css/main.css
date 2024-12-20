@@ -187,7 +187,7 @@ body {
   box-sizing: border-box;
   color: var(--text-color);
   font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 14.5px;
+  font-size: 0.86em;
   line-height: 2;
   min-height: 100%;
   position: relative;
@@ -275,7 +275,7 @@ dd {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  font-size: 14px;
+  font-size: 0.875em;
   margin: 0 0 20px;
   width: 100%;
 }
@@ -503,7 +503,7 @@ pre figcaption {
   background: var(--highlight-gutter-background);
   color: var(--highlight-foreground);
   display: flow-root;
-  font-size: 14px;
+  font-size: 0.875em;
   line-height: 1.2;
   padding: 0.5em;
 }
@@ -524,7 +524,7 @@ code {
 }
 code {
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 0.875em;
   padding: 2px 4px;
   overflow-wrap: break-word;
 }
@@ -1094,7 +1094,7 @@ pre code {
   color: var(--brand-hover-color);
 }
 .site-title {
-  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Roboto Slab, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 1.375em;
   font-weight: normal;
   line-height: 1.5;
@@ -1235,7 +1235,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #475efc;
+    background: #6fc9ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1818,7 +1818,7 @@ pre code {
   width: 4px;
 }
 .post-body {
-  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Roboto Slab, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   overflow-wrap: break-word;
 }
 @media (min-width: 1200px) {
@@ -1828,7 +1828,7 @@ pre code {
 }
 @media (min-width: 992px) {
   .post-body {
-    text-align: justify;
+    text-align: left;
   }
 }
 @media (max-width: 991px) {
@@ -2004,7 +2004,7 @@ pre code {
 }
 .posts-expand .post-meta-container {
   color: #999;
-  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Roboto Slab, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 0.75em;
   margin-top: 3px;
 }

@@ -20,29 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.kaokit.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":200,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="今年7月14号开始备考软考-系统集成项目管理工程师，起初考这个证书的原因，是因为正好今年时间充裕，因为一直再做网络安全相关工作，也想系统掌握一些其他通用的技能，为今后发展做铺垫，于是就选择了和专业相近的国家级技术管理证书《系统集成项目管理工程师》，现在想来并不是“想了且行动了”事就一定能成，因为中间总有一点不可抗拒的因素，但这次没过考证，落差也不是很大，也合情合理。写这篇博客是记录自己的一个整个备">
+    <meta name="description" content="最近在部署一台web服务器，考虑了下使用虚拟机部署，由于长期使用VMware Workstaion(以下简称:VMware)部署虚拟机，这次想换个可替代的虚拟化产品，就选择了VitrualBox(以下简称:VBox)这款被Oracle收购的开源虚拟化产品，使用后发现体验并不理想，先说下本次部署应用的软件及其版本：  软件版本:宿主机:操作系统：windows 10虚拟机软件:VitrualBox">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从软考失利中所获取的价值(一)">
-<meta property="og:url" content="https://blog.kaokit.com/article/35215.html">
+<meta property="og:title" content="关于VitrualBox和Vmware虚拟机(NAT模式)使用上的问题">
+<meta property="og:url" content="https://blog.kaokit.com/article/b424c613.html">
 <meta property="og:site_name" content="ChenYang部落格">
-<meta property="og:description" content="今年7月14号开始备考软考-系统集成项目管理工程师，起初考这个证书的原因，是因为正好今年时间充裕，因为一直再做网络安全相关工作，也想系统掌握一些其他通用的技能，为今后发展做铺垫，于是就选择了和专业相近的国家级技术管理证书《系统集成项目管理工程师》，现在想来并不是“想了且行动了”事就一定能成，因为中间总有一点不可抗拒的因素，但这次没过考证，落差也不是很大，也合情合理。写这篇博客是记录自己的一个整个备">
+<meta property="og:description" content="最近在部署一台web服务器，考虑了下使用虚拟机部署，由于长期使用VMware Workstaion(以下简称:VMware)部署虚拟机，这次想换个可替代的虚拟化产品，就选择了VitrualBox(以下简称:VBox)这款被Oracle收购的开源虚拟化产品，使用后发现体验并不理想，先说下本次部署应用的软件及其版本：  软件版本:宿主机:操作系统：windows 10虚拟机软件:VitrualBox">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog.kaokit.com/article/35215/%E8%BD%AF%E8%80%83.jpg">
-<meta property="article:published_time" content="2024-12-11T05:07:29.000Z">
-<meta property="article:modified_time" content="2024-12-23T05:24:54.828Z">
+<meta property="og:image" content="https://blog.kaokit.com/article/b424c613/vitrualnat.svg">
+<meta property="article:published_time" content="2024-12-23T01:01:13.000Z">
+<meta property="article:modified_time" content="2024-12-23T05:18:04.794Z">
 <meta property="article:author" content="ChenYang">
-<meta property="article:tag" content="学习">
+<meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog.kaokit.com/article/35215/%E8%BD%AF%E8%80%83.jpg">
+<meta name="twitter:image" content="https://blog.kaokit.com/article/b424c613/vitrualnat.svg">
 
 
-<link rel="canonical" href="https://blog.kaokit.com/article/35215.html">
+<link rel="canonical" href="https://blog.kaokit.com/article/b424c613.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.kaokit.com/article/35215.html","path":"article/35215.html","title":"从软考失利中所获取的价值(一)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.kaokit.com/article/b424c613.html","path":"article/b424c613.html","title":"关于VitrualBox和Vmware虚拟机(NAT模式)使用上的问题"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>从软考失利中所获取的价值(一) | ChenYang部落格</title>
+<title>关于VitrualBox和Vmware虚拟机(NAT模式)使用上的问题 | ChenYang部落格</title>
   
 
 
@@ -102,7 +102,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -115,7 +115,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%80%83%E8%AF%95%E6%88%90%E7%BB%A9"><span class="nav-number">1.</span> <span class="nav-text">考试成绩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">原因分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E5%9E%8B%E5%81%8F%E7%A7%91"><span class="nav-number">2.1.</span> <span class="nav-text">题型偏科</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%83%E6%80%81%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">心态问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8A%E6%97%B6%E6%AD%A2%E6%8D%9F"><span class="nav-number">3.</span> <span class="nav-text">及时止损</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%87%E8%80%83%E6%97%A5%E5%BF%97"><span class="nav-number">4.</span> <span class="nav-text">备考日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -182,7 +181,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.kaokit.com/article/35215.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.kaokit.com/article/b424c613.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon.svg">
@@ -195,12 +194,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="从软考失利中所获取的价值(一) | ChenYang部落格">
+      <meta itemprop="name" content="关于VitrualBox和Vmware虚拟机(NAT模式)使用上的问题 | ChenYang部落格">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          从软考失利中所获取的价值(一)
+          关于VitrualBox和Vmware虚拟机(NAT模式)使用上的问题
         </h1>
 
         <div class="post-meta-container">
@@ -210,15 +209,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2024-12-11 13:07:29" itemprop="dateCreated datePublished" datetime="2024-12-11T13:07:29+08:00">2024-12-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-23 13:24:54" itemprop="dateModified" datetime="2024-12-23T13:24:54+08:00">2024-12-23</time>
+      <time title="创建时间：2024-12-23 09:01:13 / 修改时间：13:18:04" itemprop="dateCreated datePublished" datetime="2024-12-23T09:01:13+08:00">2024-12-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -226,7 +219,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E5%B8%B8/" itemprop="url" rel="index"><span itemprop="name">日常</span></a>
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">信息技术</span></a>
         </span>
     </span>
 
@@ -239,37 +232,37 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>今年7月14号开始备考软考-系统集成项目管理工程师，起初考这个证书的原因，是因为正好今年时间充裕，因为一直再做网络安全相关工作，也想系统掌握一些其他通用的技能，为今后发展做铺垫，于是就选择了和专业相近的国家级技术管理证书《系统集成项目管理工程师》，现在想来并不是“想了且行动了”事就一定能成，因为中间总有一点不可抗拒的因素，但这次没过考证，落差也不是很大，也合情合理。<br>写这篇博客是记录自己的一个整个备考过程，以及备考过程中个人认为比较实用的知识点，包括这次考证失利的原因</p>
-<h1 id="考试成绩"><a href="#考试成绩" class="headerlink" title="考试成绩"></a>考试成绩</h1><p>12月11日<a target="_blank" rel="noopener" href="https://bm.ruankao.org.cn/">成绩查询平台</a> 查到自己的考试成绩如下</p>
-<p><img src="/article/35215/%E8%BD%AF%E8%80%83.jpg"></p>
-<p>软考系统集成项目管理工程师考试分基础知识和应用技术两部分科目</p>
+    <div class="post-body" itemprop="articleBody"><p>最近在部署一台web服务器，考虑了下使用虚拟机部署，由于长期使用VMware Workstaion(以下简称:VMware)部署虚拟机，这次想换个可替代的虚拟化产品，就选择了VitrualBox(以下简称:VBox)这款被Oracle收购的开源虚拟化产品，使用后发现体验并不理想，先说下本次部署应用的软件及其版本：</p>
 <ul>
-<li>基础知识：主观选择题(主要考察的是项目管理理论知识以及部分计算机专业知识)</li>
-<li>应用技术：综合案例题(主要考察的是项目管理计算题，考察项目进度和成本管理相关的内容)</li>
+<li><p>软件版本:<br>宿主机:操作系统：windows 10<br>虚拟机软件:VitrualBox 7.1<br>虚拟机客户机:Debian 12</p>
+</li>
+<li><p>网络:<br>宿主机:192.168.2.30&#x2F;24<br>虚拟机客户机:203.0.113.129&#x2F;24</p>
+</li>
 </ul>
-<p>考试规则都是机考，上午场考基础知识，下午场考应用技术</p>
-<p>考试以每科成绩≥45分为合格，单科满分75分，看似很简单，其实难度也是相当大的。比如，即使上午场的基础知识准备再充分，考满分，下午场应用技术≤45分，那成绩也是不合格。</p>
-<h1 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h1><p>这次考证失败原因很简单：</p>
+<p>通常，VMware的客户机设置完NAT后，宿主机既可以Ping通客户机，也可以访问客户机中任何服务，而VBox的客户机网络模式同样设置NAT的情况下，宿主机无法ping通客户机，且无法访问访问客户机中任何应用服务，但是客户机却能正常访问外部网络和服务</p>
+<p><img src="/article/b424c613/vitrualnat.svg" alt="点击放大图片"></p>
+<p>为了解决VBox的NAT这个问题，查阅官方产品使用手册，手册全英文，我结合翻译再加上实际环境遇到的问题，就简单描述下VBox的NAT工作机制。<br>VBox中的NAT可以认为是台虚拟路由器，是VBox核心网络引擎，在VBox中，这台虚拟路由器的逻辑位置在虚拟机和宿主机之间(具体上图示意图)<br>VBox的NAT模式有个特点也是缺点，与真实环境中路由器网络非常相似，虚拟客户机对于外部网络是不可见且无法访问，即使宿主机也一样。关于这个问题，官方也提供了解决办法，<strong>使用NAT配置端口转发</strong>，即可实现宿主机访问客户机的网络服务</p>
+<p>关于VBox NAT的一些使用上的限制，官方给了说明，需要注意以下几点：</p>
 <ul>
-<li>题型偏科</li>
-<li>心态问题</li>
+<li>ICMP协议限制:比如ping、tracertroute这类工具可能会失去作用</li>
+<li>仅支持特定协议:仅支持TCP&#x2F;UDP，不支持GRE、VPN、DDNS(亲自测试过DDNS无法生效)</li>
+<li>NAT端口转发:不支持公共端口(0-1024)</li>
 </ul>
-<h2 id="题型偏科"><a href="#题型偏科" class="headerlink" title="题型偏科"></a>题型偏科</h2><p>“偏科”是我自己从小到大的一个非常负面的学习习惯，我从小是偏文，对数学化学非常不敏感，常年徘徊<strong>及格和不及格</strong>之间，但是物理那是相当的理想。<br>同为理科，相对数学化学我就觉得物理我理解起来更容易，而且兴趣极高，扯远了,但是根据本次事情，我发现一个人从小的学习思维，真的会影响到长大成人，甚至可能到老，所以从这次考试的分数中也不难可以看出，在应用技术科目中，我吃了波大亏，其实也是在备考过程中战略偷懒，理论知识掌握熟练了之后，觉得自己已经掌握了项目管理知识了，而且简单基础题型的计算都能成功算出来，也大概知道如何应用到工作中。<br>为了到达心理的最低期望值，于是为了保上午场的基础知识科目分数，我练习应用计算题的时长非常短，刷题量的也没到达练习要求。<br>我后来自己评估了下，理论基础上知识上花了70%的时间和精力，而应用技术只花了20%-30%的时间和精力，在备考期间，因为其他一些不可抗拒的因素，导致学习精力和时长进一步压缩，但是终归还是自身问题</p>
-<h2 id="心态问题"><a href="#心态问题" class="headerlink" title="心态问题"></a>心态问题</h2><p>其实我内心对这次考证真正想法就是，成绩合格拿证只是锦上添花的作用，实际上我想系统的学习掌握项目管理知识。所以这样一个不以拿证为目的心态，必然是对备考有影响的。</p>
-<h1 id="及时止损"><a href="#及时止损" class="headerlink" title="及时止损"></a>及时止损</h1><p>在备考后半段时，我已经知道自己通过率很渺茫，因为应用技术的综合案例题于我而言很难，而且家庭事务上需要我更多的支持和帮衬（我是家庭主义倾向的人），所以没有精力也没有更多的兴致去钻研计算题了，而且备考期间整个人的精神状态非常不好，考试没有压力是假的，都是人，是人肯定会有情感和精神上的压力，综合利弊，我后来基本上就只备考基础知识，计算题就带着看看，照着参考答案试着练习练习。</p>
-<p>“考不到，肯定要学到”，于是我着手梳理备考期间一些自认为重要的项目管理知识内容，这个我后面会详细记录分享。</p>
-<h1 id="备考日志"><a href="#备考日志" class="headerlink" title="备考日志"></a>备考日志</h1><ul>
-<li>7月14日截至到8月15日，看了第1遍教材</li>
-<li>8月15日截至到8月20日，梳理知识点(看了第2遍教材)</li>
-<li>8月19日线上考试报名</li>
-<li>8月20日截至到9月10日，梳理知识点(背记计算公式)</li>
-<li>9月10日截至到9月30日，梳理知识点(刷选择题题库)</li>
-<li>10月1日截至到11月6日，报班培训(刷培训机构的题库以及学习直播课程)</li>
-<li>11月7日正式考试</li>
-<li>12月11日成绩公示</li>
+<p>最后再看下Vmware的NAT工作机制，Vmware虚拟机软件安装到Windows宿主机系统时，系统会生成一个VMnet8的虚拟网络适配器，客户机在NAT模式中访问外部网络时与VBox中的机制差不多，唯一不同的是VMware中宿主机可以直接访问虚拟客户机，且不需要依托端口转发。因为宿主机和虚拟客户机共用VMnet8这个虚拟适配器，所以主机系统可以通过NAT直接与虚拟客户机相互通信。</p>
+<p>关于Vmware NAT的一些使用上的限制，官方也给了说明，需要注意以下几点：</p>
+<ul>
+<li>NAT并不完全透明。尽管可以手动配置NAT设备来建立虚拟机与互联网服务器连接，但NAT通常不允许从外部互联网想虚拟机发起连接。在实际环境中，这会导致一部分需要从外部互联网向虚拟机发起连接的TCP和UDP协议无法自动运行或根本不运行。(测试DDNS可以运行的)</li>
+<li>NAT能提供一些防火墙保护，比如仅允许虚拟机通过NAT访问外部网络，而外部网络无法访问虚拟机</li>
+<li>NAT中虚拟机可以与宿主机双向访问，但是无法与宿主机相同子网的其他外部主机相互访问，除非启用NAT的端口转发</li>
 </ul>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>战术的勤奋掩饰不了战略上的懒惰，下半句👇</p>
-<p>但是在战术执行过程中，根据实际情况修改战略目标及时止损也不失为一种积极的应对策略</p>
+<p>上面两个虚拟化产品中NAT模式的还有个共同缺点：NAT模式会造成性能上的损失，如果宿主机硬件性能充沛，这类损失所造成的影响极为有限。</p>
+<p>综上所述,VBox这种NAT模式仅支持数据包单向请求的作用对我来说限制太大，而且缺点很多，与之相比Vmware就宽松很多，万般折腾下还是用回Vmware吧</p>
+<p>附:官方资料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.virtualbox.org/manual/topics/networkingdetails.html#nat-limitations">VirtualBox中的虚拟网络</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-89311E3D-CCA9-4ECC-AF5C-C52BE6A89A95.html">VMware Workstation Pro中配置网络地址转换</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-122B85E2-E60F-4C44-87B2-A3F8DDC88D66.html">VMware Workstation Pro中NAT配置的功能和限制</a></li>
+</ul>
 
     </div>
 
@@ -287,7 +280,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.kaokit.com/article/35215.html" title="从软考失利中所获取的价值(一)">https://blog.kaokit.com/article/35215.html</a>
+      <a href="https://blog.kaokit.com/article/b424c613.html" title="关于VitrualBox和Vmware虚拟机(NAT模式)使用上的问题">https://blog.kaokit.com/article/b424c613.html</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -296,7 +289,7 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"># 学习</a>
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
           </div>
 
         
@@ -309,11 +302,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/article/18731.html" rel="prev" title="从软考失利中所获取的价值(二)">
-                  <i class="fa fa-angle-left"></i> 从软考失利中所获取的价值(二)
-                </a>
             </div>
             <div class="post-nav-item">
+                <a href="/article/17996.html" rel="next" title="CloudFlare无法删除Pages存储库问题">
+                  CloudFlare无法删除Pages存储库问题 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>

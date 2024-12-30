@@ -125,7 +125,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -176,6 +176,295 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.kaokit.com/article/3aae8dc5.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.svg">
+      <meta itemprop="name" content="ChenYang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ChenYang部落格">
+      <meta itemprop="description" content="玩转互联网">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | ChenYang部落格">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/article/3aae8dc5.html" class="post-title-link" itemprop="url">WLAN、WiFi、Hotspot(热点)之间的关系及区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-12-30 16:06:09 / 修改时间：16:11:49" itemprop="dateCreated datePublished" datetime="2024-12-30T16:06:09+08:00">2024-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">信息技术</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li>WLAN (Wireless Local Area Network) 是无线局域网的含义，可以理解为商业化技术名词 ，包含了多种技术标准的无线局域网的统称</li>
+<li>Wi-Fi 指的是 Wi-Fi 联盟的商标，是一种基于 IEEE 802.11 标准的 WLAN 技术，由于 Wi-Fi 的普及，生活中已将  Wi-Fi 成为实际的 WLAN的专属名词</li>
+<li>Hotspot 即无线热点的含义，指在提供 Wi-Fi 接入的网络服务，它的作用可以将 Wi-Fi 的网络覆盖范围延申，方便人们手持移动端无线网络的使用，目前无论是平板电脑、还是普通 PC，甚至是智能手机均提供 Hotspot 功能</li>
+</ul>
+<p>从上述概念中基本了解了 WLAN 包含了 Wi-Fi 和 Hotspot 两种无线网技术，当我笔记本接入家里的 Wi-Fi 然后访问外部互联网 ，此时因为有其他需求，我需要将电脑启用windows内置的热点，然后将手机接入电脑的无线热点访问互联网，此时我认为Hotspot就相当Wi-Fi中继器一样，手机获取的IP地址应该是和电脑属于同一子网，但是实际是和电脑两个不同的子网。</p>
+<p>于是我又看了下windows电脑的路由表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">IPv4 路由表</span><br><span class="line">===========================================================================</span><br><span class="line">活动路由:</span><br><span class="line">           网络目标        网络掩码              网关              接口     跃点数</span><br><span class="line">          0.0.0.0          0.0.0.0        172.16.59.1       172.16.59.45    25</span><br><span class="line">        127.0.0.0        255.0.0.0            在链路上         127.0.0.1    331</span><br><span class="line">        127.0.0.1  255.255.255.255            在链路上         127.0.0.1    331</span><br><span class="line">  127.255.255.255  255.255.255.255            在链路上         127.0.0.1    331</span><br><span class="line">      172.16.59.0    255.255.255.0            在链路上      172.16.59.45    281</span><br><span class="line">     172.16.59.45  255.255.255.255            在链路上      172.16.59.45    281</span><br><span class="line">    172.16.59.255  255.255.255.255            在链路上      172.16.59.45    281</span><br><span class="line">    192.168.137.0    255.255.255.0            在链路上     192.168.137.1    306</span><br><span class="line">    192.168.137.1  255.255.255.255            在链路上     192.168.137.1    306</span><br><span class="line">  192.168.137.255  255.255.255.255            在链路上     192.168.137.1    306</span><br><span class="line">        224.0.0.0        240.0.0.0            在链路上         127.0.0.1    331</span><br><span class="line">        224.0.0.0        240.0.0.0            在链路上      172.16.59.45    281</span><br><span class="line">        224.0.0.0        240.0.0.0            在链路上     192.168.137.1    306</span><br><span class="line">  255.255.255.255  255.255.255.255            在链路上         127.0.0.1    331</span><br><span class="line">  255.255.255.255  255.255.255.255            在链路上      172.16.59.45    281</span><br><span class="line">  255.255.255.255  255.255.255.255            在链路上     192.168.137.1    306</span><br><span class="line">===========================================================================</span><br><span class="line">永久路由:</span><br><span class="line">  无</span><br></pre></td></tr></table></figure>
+<p>可以发现，当手机接入电脑的Hotspot后，电脑端的路由表里确实额外多了一个<code>192.168.137.0</code>的子网，这里就说明一个问题，Hotspot的作用相当于电脑又创建了一个新的Wi-Fi子网给手机使用，两个不同的子网通过本地电脑进行Layer3路由转发。所以手机端才可以联网。<br>所以设备内置的Hotspot和实际的Wi-Fi是两个不同子网，不属于同一WLAN。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.kaokit.com/article/df3ba45c.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.svg">
+      <meta itemprop="name" content="ChenYang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ChenYang部落格">
+      <meta itemprop="description" content="玩转互联网">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | ChenYang部落格">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/article/df3ba45c.html" class="post-title-link" itemprop="url">windows内置网络抓包的使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-12-30 15:59:23 / 修改时间：16:02:51" itemprop="dateCreated datePublished" datetime="2024-12-30T15:59:23+08:00">2024-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">信息技术</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>正常情况下都会使用 Wireshark 进行网络数据包的捕获及分析，但是现在受于环境限制，电脑被禁止安装 Wireshark  软件，我还是找了一微软官方的网络包捕获器，比如 Microsoft Network Monitor 这款工具，但是客户还是不让装，办法还是比问题多，可以通过 cmd 命令提示符使用 Windows 内置的网络包捕获功能，操作如下：</p>
+<h2 id="网络包数据捕获"><a href="#网络包数据捕获" class="headerlink" title="网络包数据捕获"></a>网络包数据捕获</h2><p>以<strong>管理员身份</strong>运行 cmd ，输入以下命令后，开始捕获网络数据包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\system32&gt;netsh trace start capture=<span class="built_in">yes</span> report=disabled</span><br><span class="line"></span><br><span class="line">跟踪配置:</span><br><span class="line">-------------------------------------------------------------------</span><br><span class="line">状态:             正在运行</span><br><span class="line">跟踪文件:         C:\Users\user\AppData\Local\Temp\NetTraces\NetTrace.etl</span><br><span class="line">附加:             关闭</span><br><span class="line">循环:           启用</span><br><span class="line">最大大小:           512 MB</span><br><span class="line">报告:             已禁用</span><br></pre></td></tr></table></figure>
+<p>此时行任意的网络活动都将被捕获器捕获</p>
+<p>输入以下命令停用捕获器，然后会在<code>C:\Users\[管理员用户名]\AppData\Local\Temp\NetTraces\</code>目录下生成名为<code>NetTrace.etl</code>的文件，这个文件内容就是捕获到的所有网络数据包数据信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\system32&gt;netsh trace stop</span><br><span class="line">正在合并跟踪 ... 完成</span><br><span class="line">跟踪会话已成功停止。</span><br></pre></td></tr></table></figure>
+
+<h2 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h2><p>此时<code>NetTrace.etl</code>无法被直接读取，即使可以读取，内容都是代码，可读性极差，我将这份文件发送到自己电脑里，至少数据包已经捕获到了，现在需要将<code>.etl</code>转换成可被 Wireshark 读取的 <code>.pcapng</code> 文件，这就需要借助微软官方的转换工具 <a target="_blank" rel="noopener" href="https://github.com/microsoft/etl2pcapng">etl2pcapng</a> 将下载好的 etl2pcapng 移动至<code>NetTrace.etl</code>同一目录中，然后还是以<strong>管理员身份</strong>运行 cmd ，输入以下命令后，开始转换格式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\system32&gt;<span class="built_in">cd</span> C:\Users\user\AppData\Local\Temp\NetTraces</span><br><span class="line"></span><br><span class="line">C:\Users\user\AppData\Local\Temp\NetTraces&gt;etl2pcapng.exe NetTrace.etl NetTrace.pcapng</span><br><span class="line">IF: medium=eth                  ID=0    IfIndex=10      VlanID=0</span><br><span class="line">Wrote 39365 frames to NetTrace.pcapng</span><br></pre></td></tr></table></figure>
+<p>此时将转换后的<code>NetTrace.pcapng</code>用 Wireshark 打开即可</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.kaokit.com/article/e6fe5db9.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.svg">
+      <meta itemprop="name" content="ChenYang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ChenYang部落格">
+      <meta itemprop="description" content="玩转互联网">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | ChenYang部落格">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/article/e6fe5db9.html" class="post-title-link" itemprop="url">简单管理IPv4地址</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-12-30 14:05:52 / 修改时间：15:54:31" itemprop="dateCreated datePublished" datetime="2024-12-30T14:05:52+08:00">2024-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">信息技术</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>现代网络，少了IP地址就没法连接网络，IP本质就是网络，因为它运行在网络层，承载着人类的联网数据。管理IP地址最重要最基础的就是IP地址划分计算。</p>
+</blockquote>
+<h1 id="IP地址划分计算"><a href="#IP地址划分计算" class="headerlink" title="IP地址划分计算"></a>IP地址划分计算</h1><p>IP地址划分涉及最重要的两个技术CIDR(无类域间路由)以及VLSM(可变长子网掩码划分)，以下是通过这两个技术，分别划分地址</p>
+<ul>
+<li><p>案例1：计算可用网络地址<br> CIDR格式IP:192.168.0.0&#x2F;25<br> CIDR格式网络块：2的(32-25)次方&#x3D;128，可容纳128个地址<br> VLSM格式IP：192.168.0.0 255.255.255.128<br> VLSM格式网络块：256-128&#x3D;128，可容纳128个地址<br> 可用地址范围：192.168.0.1-192.168.0.127<br> 因为192.168.0.127是广播地址，所以，192.168.0.0&#x2F;25网络可以容纳126台主机</p>
+</li>
+<li><p>案例2：仅有13台主机，如何将192.168.0.0&#x2F;24进行子网的划分<br> 2的4次方&#x3D;16台，正好满足最小容量的划分，此时主机部分为4，网络部分为32-4&#x3D;28，<br> CIDR格式IP:192.168.0.0&#x2F;28<br> CIDR格式网络块：2的(32-28)次方&#x3D;16，可容纳16个地址<br> VLSM格式IP：192.168.0.0 255.255.255.240<br> VLSM格式网络块：256-240&#x3D;16，可容纳16个地址<br> 可用地址范围：192.168.0.1-192.168.0.14<br> 所以，仅有13台主机，可以将192.168.0.0&#x2F;24继续划分为192.168.0.0&#x2F;28</p>
+</li>
+</ul>
+<blockquote>
+<p>注意: 在主机数量已知的条件下，计算可容纳的IP的地址，需要用2的N次方依次计算，此时N即为主机位，(32-N)即为网络位</p>
+</blockquote>
+<h1 id="IP路由汇总"><a href="#IP路由汇总" class="headerlink" title="IP路由汇总"></a>IP路由汇总</h1><blockquote>
+<p>如果已经掌握了上述CIDR以及VLSM的内容这会非常简单</p>
+</blockquote>
+<ul>
+<li>案例1：计算可用网络地址，需要对以下两个子网路由汇总<br>子网 1: 192.168.16.0&#x2F;24<br>子网 2: 192.168.17.0&#x2F;24<br>先将子网地址转换为2进制表格：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">+---------+-------------+---------------------------------------------+</span><br><span class="line">| Decimal | IP Address  |     192  .    168   .    16   .     0       |      </span><br><span class="line">+---------+-------------+---------------------------------------------+</span><br><span class="line">| Binary  | IP Address  | 11000000 . 10101000 . 0001000|0 . 00000000  |</span><br><span class="line">+---------+-------------+---------------------------------------------+</span><br><span class="line">| Binary  | Subnet Mask | 11000000 . 10101000 . 0001000|1 . 00000000  |</span><br><span class="line">+---------+-------------+---------------------------------------------+</span><br><span class="line">| Decimal | IP Address  |     192  .    168   .     17   .     0      |      </span><br><span class="line">+-----------------------+---------------------------------------------+</span><br><span class="line">|         Bit           |  8 Bits  .  8 Bits  .  8 Bits  .  8 Bits    |</span><br><span class="line">+-----------------------+---------------------------------------------+</span><br><span class="line">|         Byte          |  1 Byte  .  1 Byte  .  1 Byte  .  1 Byte    |</span><br><span class="line">+-----------------------+---------------------------------------------+</span><br></pre></td></tr></table></figure>
+ 找到公共前缀：<br> 从左向右(高位到低位)，持续比较两个子网的2进制，直到首个不同的位来确定 <strong>最长</strong>的公共前缀，上述最长的公共前缀中有23位2进制是相同的<br> 汇总路由的地址：<br> 汇总路由的网络部分将是上述23 位，而剩余的 9 位用于子网划分。因此，CIDR 表示得到汇总路由为：<code>192.168.16.0/23</code></li>
+</ul>
+<h1 id="通配符掩码"><a href="#通配符掩码" class="headerlink" title="通配符掩码"></a>通配符掩码</h1><blockquote>
+<p>主要应用于OSFP路由协议以及一些网络控制ACL配置中</p>
+</blockquote>
+<ul>
+<li>案例1：<br>掩码：255.255.248.0<br>转成通配符掩码: 0.0.7.255<br>用每个255减去对应的每一位，即得到通配符掩码</li>
+</ul>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p>IP地址分类：</p>
+<ul>
+<li><p>私网地址分类(实际已被CIDR取代，用于私有网络，无法路由)<br>A类：10.0.0.0 - 10.255.255.255<br>B类：172.16.0.0 - 172.31.255.255<br>C类：192.168.0.0 - 192.168.255.255 </p>
+</li>
+<li><p>特殊私网地址(主要用于测试实验和文档，不用于生产)<br>192.0.2.0&#x2F;24：用于文档编写和网络测试<br>192.18.0.0&#x2F;15：用于测试不同子网间的网络连接<br>198.51.100.0&#x2F;24：用于文档编写和网络测试<br>203.0.113.0&#x2F;24：用于文档编写和网络测试</p>
+</li>
+</ul>
+<blockquote>
+<p>除私网地址及特殊私网地址以外均为公共网络地址</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://blog.kaokit.com/article/31febde8.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -212,7 +501,16 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-30 09:34:36" itemprop="dateModified" datetime="2024-12-30T09:34:36+08:00">2024-12-30</time>
+      <time title="修改时间：2024-12-30 15:52:29" itemprop="dateModified" datetime="2024-12-30T15:52:29+08:00">2024-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">信息技术</span></a>
+        </span>
     </span>
 
   
